@@ -1,0 +1,46 @@
+Big Picture:
+  1. Greet the player and provide some instructions
+  2. Once the player starts the game, a random image will be selected and displayed on screen.
+  3. There will be an area for the player to make a guess of who the player is
+  4. After the user submits an answer the next image will be displayed
+  5. This will be repeated until all images have been displayed or time runs out 
+
+
+
+Refinement:
+  1. Browser page loads and displays a welcome message to the player
+      -Also will display a brief outline of instructions, explaining how the game works.
+      -The player can set a timer for how long they want to play for.
+  2. Randomly select an image
+      -(Not sure yet how/where to pull from).
+  3. The image of the player will then be displayed to the player
+      -Leave the image up until the player makes a guess
+  4. Player will be prompted to make a guess
+  5. Once the player makes a guess:
+      -Determine whether the guess is true or false
+          -if true, add 1 to the player total score
+          -if false, players score will remain at whatever the current and/or previous value was
+  6. After the player has submitted an answer, proceed to the next randomly selected image.
+  7. Repeat this process until...
+      -Either the player runs out of their set amount of time
+      -Or the player makes a guess for all of the possible images within the pool.
+  8. Display a message to the user when either of those outcomes happen
+      -Return the players final score
+      -Maybe also could return the players previous 'high score'
+  9. Log the players final score 
+  10. Show all the correct answers for the images that were displayed
+  11. Ask if the player wants to play again.
+      -If the player selects 'yes', then go back to #2 and repeat.
+
+
+
+Assertions:
+  -The players names will have to be tied to a respective image and the answer given will be taken into account as true or false
+Conditionals:
+  -For if statement for when the player is playing, the game will continue if the player has not exceeded the alotted time or has gone through all the images.
+  -if else statement to determine whether the players guess is true or false. 
+Loops:
+  -
+Functions:
+  -Will need a function that will display the image to the player and prompt for a response
+
