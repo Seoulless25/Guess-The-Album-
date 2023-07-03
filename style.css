@@ -118,19 +118,5 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-</style>
-</head>
-<body style="background-color:white;">
 
-<div class="navbar">
-  <a href="#home">Home</a>
-  <a href="#scores">Scores</a>
-  <div class="dropdown">
-    <button class="dropbtn">Genres 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      
-    </div>
-  </div> 
-</div>
+
