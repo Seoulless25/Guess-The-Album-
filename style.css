@@ -10,12 +10,17 @@ body {
   }
   
   form {
-    margin-top: 20px;
+    margin-top: 400px;
   }
   
+label[for="guess"] {
+  font-size: 20px;
+  font-weight: bold;
+}
+
   input[type="text"] {
     padding: 5px;
-    font-size: 16px;
+    font-size: 18px;
   }
   
   button {
@@ -37,21 +42,26 @@ body {
   }
   
   form {
-    margin-top: 20px;
+    margin-top: 500px;
   }
   
   input[type="text"] {
     padding: 5px;
-    font-size: 16px;
+    font-size: 18px;
+    border-radius: 50px;
   }
   
   button {
     padding: 10px 20px;
     font-size: 16px;
     background-color: lightseagreen;
-    color: #fff;
-    border: none;
+    color: black;
     cursor: pointer;
+    display: flexbox;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 50px;
+    border: none;
   }
   
   #result {
@@ -61,12 +71,12 @@ body {
 
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color: lightseagreen;
 }
 
 .navbar a {
   float: left;
-  font-size: 16px;
+  font-size: 26px;
   color: white;
   text-align: center;
   padding: 14px 16px;
@@ -79,7 +89,7 @@ body {
 }
 
 .dropdown .dropbtn {
-  font-size: 16px;  
+  font-size: 26px;  
   border: none;
   outline: none;
   color: white;
@@ -119,4 +129,15 @@ body {
   display: block;
 }
 
+h3 {
+  margin-top: 50px;
+  font-size: 40px;
+  font-weight: lighter;
+}
 
+
+footer {
+  padding-top: 200px;
+  font-weight: bold;
+
+}

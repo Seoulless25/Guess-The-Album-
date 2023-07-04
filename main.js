@@ -1,13 +1,15 @@
-const albumsHipHop = [
-   'https://i.imgur.com/nw1NWlL.jpg',
-   'https://i.imgur.com/38KiZpy.jpg',
-   'https://i.imgur.com/EECQlve.jpg',
-]
+const allAlbumsCovers = [
+    'https://imgbox.com/p27wzFJg',
+    'https://images2.imgbox.com/e6/5b/MY6T2p6a_o.jpg'
+ ]
 
-function selectRandomAlbum() {
-    randomIndex = Math.floor(Math.random() * albumsHipHop.length);
+let randomIndex = Math.floor( Math.random() * allAlbumsCovers.length);
+const randomCover = allAlbumsCovers[randomIndex];
+const imagePlaceHolder = document.getElementById('imagePlaceHolder');
 
-    selectedImage = albumsHipHop[randomIndex]
+const coverAlbum = document.createElement('img');
+coverAlbum.src = randomCover;
+imagePlaceHolder.appendChild(coverAlbum);
 
-    document.getElementById('').src = ''
-}
+
+console.log(randomCover);
