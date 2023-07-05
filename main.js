@@ -14,7 +14,7 @@ const allAlbumsCovers = [
  ]
 
 let randomIndex = Math.floor( Math.random() * allAlbumsCovers.length);
-const randomCover = allAlbumsCovers[randomIndex];
+const randomCover = allAlbumsCovers[randomIndex].AlbumImage;
 const imagePlaceHolder = document.getElementById('imagePlaceHolder');
 
 const coverAlbum = document.createElement('img');
@@ -25,21 +25,21 @@ imagePlaceHolder.appendChild(coverAlbum);
 function checkAnswer() {
     let userInput = document.getElementById("guess").value;
     let correctAnswer = allAlbumsCovers[randomIndex].AlbumName;
-    document.getElementById('guess').value = '';
-    if (userInput.value !== correctAnswer) {
-        correct()
+    if (userInput === correctAnswer) {
+        correct();
     } else {
         incorrect();
     }
+    document.getElementById('guess').value = '';
 }
 
 function correct() {
     let correctMessage = document.getElementById('correctMessage')
-    correctMessage.innerHTML = "CORRECT!"
+    correctMessage.textContent = "CORRECT!"
 }
 
 function incorrect() {
     let incorrectMessage = document.getElementById('incorrectMessage')
-    incorrectMessage.innerHTML = "TRY AGAIN!"
+    incorrectMessage.textContent = "TRY AGAIN!"
 }
     
