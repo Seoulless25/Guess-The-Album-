@@ -13,6 +13,8 @@ const allAlbumsCovers = [
     {AlbumImage: 'https://images2.imgbox.com/fe/09/LX5oLCAD_o.jpg', AlbumName: 'Melt My Eyez See Your Future'}
  ]
 
+
+
 let randomIndex = Math.floor( Math.random() * allAlbumsCovers.length);
 const randomCover = allAlbumsCovers[randomIndex].AlbumImage;
 const imagePlaceHolder = document.getElementById('imagePlaceHolder');
@@ -31,6 +33,7 @@ function checkAnswer() {
         incorrect();
     }
     document.getElementById('guess').value = '';
+    event.preventDefault();
 }
 
 function correct() {
