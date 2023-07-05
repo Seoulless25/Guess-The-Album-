@@ -14,7 +14,6 @@ const allAlbumsCovers = [
  ]
 
 
-
 let randomIndex = Math.floor( Math.random() * allAlbumsCovers.length);
 const randomCover = allAlbumsCovers[randomIndex].AlbumImage;
 const imagePlaceHolder = document.getElementById('imagePlaceHolder');
@@ -39,10 +38,12 @@ function checkAnswer() {
 function correct() {
     let correctMessage = document.getElementById('correctMessage')
     correctMessage.textContent = "CORRECT!"
+    setTimeout(() => correctMessage.textContent = '', 5000 )
 }
 
 function incorrect() {
     let incorrectMessage = document.getElementById('incorrectMessage')
     incorrectMessage.textContent = "TRY AGAIN!"
+    setTimeout(() => incorrectMessage.textContent = '', 5000 )
 }
     
