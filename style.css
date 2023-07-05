@@ -1,7 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     font-family: 'Roboto Condensed', sans-serif;
-    background-color: #f1f1f1;
+    background-color: lightslategray;
     text-align: center;
   }
   
@@ -139,5 +139,4 @@ h2 {
 footer {
   padding-top: 100px;
   font-weight: bold;
-
 }
