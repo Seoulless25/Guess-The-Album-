@@ -13,7 +13,7 @@ const allAlbumsCovers = [
     {AlbumImage: 'https://images2.imgbox.com/fe/09/LX5oLCAD_o.jpg', AlbumName: 'Melt My Eyez See Your Future'}
  ]
 
-let randomIndex = Math.floor( Math.random() * allAlbumsCovers.AlbumImage);
+let randomIndex = Math.floor( Math.random() * allAlbumsCovers.length);
 const randomCover = allAlbumsCovers[randomIndex];
 const imagePlaceHolder = document.getElementById('imagePlaceHolder');
 
@@ -22,16 +22,14 @@ coverAlbum.src = randomCover;
 imagePlaceHolder.appendChild(coverAlbum);
 
 
-console.log(randomCover);
-
 function checkAnswer() {
-    let correctAnswer = allAlbumsCovers[randomIndex].AlbumName
-    let userInput = document.getElementById("guess");
+    let userInput = document.getElementById("guess").value;
+    let correctAnswer = allAlbumsCovers[randomIndex].AlbumName;
     document.getElementById('guess').value = '';
     if (userInput.value !== correctAnswer) {
-        return false;
+        correct()
     } else {
-        return true;
+        incorrect();
     }
 }
 
