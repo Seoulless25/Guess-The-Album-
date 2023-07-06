@@ -25,23 +25,43 @@ const allAlbumsCovers = [
     {AlbumImage: 'https://images2.imgbox.com/10/33/dhuIuQSI_o.jpg', AlbumName: 'Flower Boy', AlbumGenre: 'Hip Hop'},
     {AlbumImage: 'https://images2.imgbox.com/35/55/5w4A9hEf_o.jpg', AlbumName: 'Drill Music In Zion', AlbumGenre: 'Hip Hop'},
     {AlbumImage: 'https://images2.imgbox.com/ba/3f/9eFFHGK7_o.jpg', AlbumName: 'Coloring Book', AlbumGenre: 'Hip Hop'},
-    {AlbumImage: 'https://images2.imgbox.com/3b/bd/AX4QK8vH_o.jpg', AlbumName: 'Business Is Business', AlbumGenre: 'Hip Hop'}
+    {AlbumImage: 'https://images2.imgbox.com/3b/bd/AX4QK8vH_o.jpg', AlbumName: 'Business Is Business', AlbumGenre: 'Hip Hop'},
+    {AlbumImage: 'https://images2.imgbox.com/3f/e4/h9UjLO1K_o.jpg', AlbumName: 'Awaken My Love', AlbumGenre: 'Hip Hop'},
+    {AlbumImage: 'https://images2.imgbox.com/0f/02/DHvHd4gt_o.jpg', AlbumName: 'After Hours', AlbumGenre: 'Hip Hop'},
+    {AlbumImage: 'https://images2.imgbox.com/4c/29/K2KD4FoM_o.jpg', AlbumName: 'A Love Letter To You 3', AlbumGenre: 'Hip Hop'},
+    {AlbumImage: 'https://images2.imgbox.com/b4/cb/UcNzpzAV_o.jpg', AlbumName: '17', AlbumGenre: 'Hip Hop'},
+    {AlbumImage: 'https://images2.imgbox.com/03/72/OnRkY8U3_o.jpg', AlbumName: 'Limbo', AlbumGenre: 'Hip Hop'},
+    {AlbumImage: 'https://images2.imgbox.com/75/31/NjwVRrsQ_o.jpg', AlbumName: 'Jeffery', AlbumGenre: 'Hip Hop'},
+    {AlbumImage: 'https://images2.imgbox.com/1c/4d/Rvyaxgd0_o.jpg', AlbumName: 'I Never Liked You', AlbumGenre: 'Hip Hop'},
+    {AlbumImage: 'https://images2.imgbox.com/ba/5f/2iW1TU4Z_o.jpg', AlbumName: 'Freudian', AlbumGenre: 'RnB'},
+    {AlbumImage: 'https://images2.imgbox.com/d3/1d/WpPMqvw5_o.jpg', AlbumName: 'Daytona', AlbumGenre: 'Hip Hop'},
+    {AlbumImage: 'https://images2.imgbox.com/84/bd/l7v0x0Qh_o.jpg', AlbumName: 'thank u, next', AlbumGenre: 'Pop'},
+    {AlbumImage: 'https://images2.imgbox.com/7b/6b/iaTeMWrY_o.jpg', AlbumName: 'Positions', AlbumGenre: 'Pop'},
+    {AlbumImage: 'https://images2.imgbox.com/af/ae/u3DIBPJP_o.jpg', AlbumName: 'CTRL', AlbumGenre: 'RnB'},
+    {AlbumImage: 'https://images2.imgbox.com/9c/c3/BfrZp8ri_o.jpg', AlbumName: 'SOS', AlbumGenre: 'RnB'},
+    {AlbumImage: 'https://images2.imgbox.com/de/fc/bEvvMR5q_o.jpg', AlbumName: 'Under Pressure', AlbumGenre: 'Hip Hop'},
+    {AlbumImage: 'https://images2.imgbox.com/df/e2/qe5FQeYo_o.jpg', AlbumName: 'Still Striving', AlbumGenre: 'Hip Hop'},
+    {AlbumImage: 'https://images2.imgbox.com/a9/0c/fhl64SKq_o.jpg', AlbumName: 'Sonder Son', AlbumGenre: 'RnB'},
+    {AlbumImage: 'https://images2.imgbox.com/2e/e0/CPmr57ti_o.jpg', AlbumName: 'No Love Lost', AlbumGenre: 'Hip Hop'},
+    {AlbumImage: 'https://images2.imgbox.com/bb/d5/UzWuQUms_o.jpg', AlbumName: 'Nicole', AlbumGenre: 'RnB'}
  ]
 
 let randomIndex = Math.floor( Math.random() * allAlbumsCovers.length);
 let randomCover = allAlbumsCovers[randomIndex].AlbumImage;
 let imagePlaceHolder = document.getElementById('imagePlaceHolder');
 let score = 0;
-let oldScore = 0;
+let oldScore =0;
 
 let coverAlbum = document.createElement('img');
 coverAlbum.src = randomCover;
 imagePlaceHolder.appendChild(coverAlbum);
 
+console.log(randomIndex);
+
 
 function checkAnswer() {
-    let userInput = document.getElementById("guess").value;
-    let correctAnswer = allAlbumsCovers[randomIndex].AlbumName;
+    let userInput = document.getElementById("guess").value.toLowerCase();
+    let correctAnswer = allAlbumsCovers[randomIndex].AlbumName.toLowerCase();
     if (userInput === correctAnswer) {
         correct();
     } else {
@@ -51,20 +71,32 @@ function checkAnswer() {
     event.preventDefault();
 }
 
+function updateScore() {
+    document.getElementById('score').textContent = "Score: " + score;
+    console.log(score);
+}
+
 function correct() {
     let correctMessage = document.getElementById('correctMessage')
     correctMessage.textContent = "CORRECT!"
     score++;
-    oldScore = score;
-    document.getElementById('score').textContent = "Score: " + score;
+    updateScore();
     setTimeout(() => correctMessage.textContent = '', 3000 )
     initNewPage();
 }
 
-function incorrect() {
+async function resetScore() {
+    document.getElementById('oldScore').textContent = "Previous Score: " + score;
+    console.log(score);
+    score = 0;
+    updateScore();
+}
+
+async function incorrect() {
     let incorrectMessage = document.getElementById('incorrectMessage')
     incorrectMessage.textContent = "TRY AGAIN!"
-    score = 0;
+    await resetScore();
+    document.getElementById('score').textContent = "Score: " + score;
     setTimeout(() => incorrectMessage.textContent = '', 3000 )
 }
 
@@ -81,4 +113,5 @@ function initNewPage() {
     coverAlbum.src = randomCover;
     imagePlaceHolder.appendChild(coverAlbum);
 }
+
 
