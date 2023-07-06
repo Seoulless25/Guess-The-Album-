@@ -15,10 +15,10 @@ const allAlbumsCovers = [
 
 
 let randomIndex = Math.floor( Math.random() * allAlbumsCovers.length);
-const randomCover = allAlbumsCovers[randomIndex].AlbumImage;
-const imagePlaceHolder = document.getElementById('imagePlaceHolder');
+let randomCover = allAlbumsCovers[randomIndex].AlbumImage;
+let imagePlaceHolder = document.getElementById('imagePlaceHolder');
 
-const coverAlbum = document.createElement('img');
+let coverAlbum = document.createElement('img');
 coverAlbum.src = randomCover;
 imagePlaceHolder.appendChild(coverAlbum);
 
@@ -39,6 +39,7 @@ function correct() {
     let correctMessage = document.getElementById('correctMessage')
     correctMessage.textContent = "CORRECT!"
     setTimeout(() => correctMessage.textContent = '', 5000 )
+    initNewPage();
 }
 
 function incorrect() {
@@ -46,4 +47,17 @@ function incorrect() {
     incorrectMessage.textContent = "TRY AGAIN!"
     setTimeout(() => incorrectMessage.textContent = '', 5000 )
 }
-    
+
+function initNewPage() {
+    imagePlaceHolder.removeChild(coverAlbum);
+    console.log(allAlbumsCovers.length);
+    allAlbumsCovers.splice[randomIndex];
+    console.log(allAlbumsCovers.length);
+    randomIndex = Math.floor( Math.random() * allAlbumsCovers.length);
+    randomCover = allAlbumsCovers[randomIndex].AlbumImage;
+    imagePlaceHolder = document.getElementById('imagePlaceHolder');
+
+    coverAlbum = document.createElement('img');
+    coverAlbum.src = randomCover;
+    imagePlaceHolder.appendChild(coverAlbum);
+}
