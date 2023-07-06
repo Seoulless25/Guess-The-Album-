@@ -4,9 +4,9 @@ A simple image recognition game built through JS, CSS, and HTML. Players will be
 
 ## Demo
 
-Click this link to play! 
+Click this link to play!
 
-
+(https://seoulless25.github.io/SEI-Project-1/)
 
 ## How to Play 
 
@@ -23,7 +23,7 @@ Click this link to play!
 - Add some animations to the 'Correct' and 'Incorrect' pop-up message
 - Maybe add some sound effects
 
-# Technologies Used:
+## Technologies Used:
 
 -JavaScript
 -HTML
