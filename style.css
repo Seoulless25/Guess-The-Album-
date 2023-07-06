@@ -1,14 +1,31 @@
 body {
     font-family: 'Roboto', sans-serif;
     font-family: 'Roboto Condensed', sans-serif;
-    background-color: lightslategray;
+    background-color: #e4f0f8;
     text-align: center;
   }
   
   h1 {
     color: #333;
+    font-size: 65px;
+    margin-bottom: -50px;
   }
   
+  .title {
+    text-shadow: 1px 1px 1px red, 2px 2px 1px red;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .gamescore {
+    font-weight: bold;
+  }
+
+  .oldScore {
+    font-size: 22px;
+    margin-top: -25px;
+  }
+
   form {
     margin-top: 50px;
   }
@@ -36,13 +53,9 @@ label[for="guess"] {
     margin-top: 20px;
     font-size: 18px;
   }
-
-  h1 {
-    color: #333;
-  }
   
   form {
-    margin-top: 100px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -76,6 +89,9 @@ label[for="guess"] {
 .navbar {
   overflow: hidden;
   background-color: lightseagreen;
+  margin-top: -44px;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 
 .navbar a {
@@ -134,13 +150,27 @@ label[for="guess"] {
 }
 
 h2 {
-  margin-top: 50px;
-  font-size: 40px;
+  margin-top: 10px;
+  font-size: 30px;
   font-weight: lighter;
 }
 
+#correctMessage {
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px green, 2px 2px 1px green;
+}
+
+#incorrectMessage {
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px red, 2px 2px 1px red;
+}
 
 footer {
   padding-top: 100px;
   font-weight: bold;
 }
+
+
+
